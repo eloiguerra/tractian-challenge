@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import mongoose from "mongoose";
-import { Environment } from "./environment";
+import { Environment } from "../../config/environment";
 
 export default async () => {
   try {
