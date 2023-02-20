@@ -32,7 +32,7 @@ const Environment: IEnvironment = {
     server: {
       rest: {
         express: {
-          port: Number(process.env.SERVER_PORT) || 8080,
+          port: Number(process.env.PORT) || 5000,
         },
       },
     },
