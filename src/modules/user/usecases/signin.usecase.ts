@@ -31,9 +31,8 @@ export class SignInUseCase implements ISignInUseCase {
     if (!isValid) return Result.fail(new UserDoesntExistException());
 
     const token = await this.jwtAdapter.encrypt({
-      // id: user._id.toHexString(),
       id: user._id.toHexString(),
-      companyId: user.company.toHexString(),
+      companyId: user.company ? user.company.toHexString() : null,
     });
 
     return Result.ok({
