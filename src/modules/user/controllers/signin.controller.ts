@@ -18,6 +18,7 @@ export class SignInController implements Controller {
 
       return ok(response.getValue());
     } catch (error) {
+      console.log(error);
       return serverError(error);
     }
   }
