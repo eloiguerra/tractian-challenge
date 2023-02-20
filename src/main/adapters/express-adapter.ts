@@ -19,6 +19,22 @@ export const adaptResponse = (
   });
 };
 
+const getFiles = (
+  file: Express.Multer.File | undefined,
+  files:
+    | Express.Multer.File[]
+    | {
+        [fieldname: string]: Express.Multer.File[];
+      }
+    | undefined,
+) => {
+  if (file) return [file];
+
+  if (files) return files;
+
+  return undefined;
+};
+
 export const adaptRoute = (
   controller: Controller,
   middlewares?: Middleware[],
@@ -28,6 +44,7 @@ export const adaptRoute = (
       params: request.params,
       query: request.query,
       body: request.body,
+      files: getFiles(request.file, request.files),
     };
 
     if (middlewares) {
@@ -38,6 +55,8 @@ export const adaptRoute = (
         }),
       );
     }
+
+    httpRequest.user = request.user;
 
     const httpResponse = await controller.handle(httpRequest);
 

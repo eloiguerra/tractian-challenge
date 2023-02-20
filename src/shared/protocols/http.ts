@@ -1,3 +1,5 @@
+import { Upload } from "./upload";
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export interface HttpResponse {
   statusCode: number;
@@ -9,7 +11,8 @@ export interface HttpRequest {
   query?: any;
   body?: any;
   headers?: any;
-  user?: string;
+  user?: any;
+  files?: Upload;
 }
 
 export interface HttpNextFunction {

@@ -23,7 +23,7 @@ export interface IEnvironment {
     };
   };
   secrets: {
-    hash: string;
+    jwt: string;
   };
 }
 
@@ -47,7 +47,7 @@ const Environment: IEnvironment = {
     },
   },
   secrets: {
-    hash: process.env.HASH_SECRET,
+    jwt: process.env.JWT,
   },
 };
 

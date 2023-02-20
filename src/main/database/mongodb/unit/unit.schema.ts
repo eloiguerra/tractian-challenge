@@ -1,5 +1,10 @@
-import { model } from "mongoose";
+import { Schema } from "mongoose";
+import { config } from "../config";
 import { UnitModel } from "./unit-model.struct";
-import { UnitSchema } from "./unit.model";
 
-export const unitModel = model<UnitModel>("Unit", UnitSchema);
+export const UnitSchema = new Schema<UnitModel>(
+  {
+    name: { type: String, required: true },
+  },
+  config,
+);

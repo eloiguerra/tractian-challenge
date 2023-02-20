@@ -16,11 +16,7 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": [
-    "@typescript-eslint",
-    "eslint-plugin-import-helpers",
-    "prettier"
-  ],
+  "plugins": ["@typescript-eslint", "eslint-plugin-import-helpers", "prettier"],
   "rules": {
     "prettier/prettier": "error",
     "no-shadow": "off",
@@ -33,11 +29,15 @@
     "import/prefer-default-export": "off",
     "import/no-unresolved": "error",
     "@typescript-eslint/camelcase": "off",
-    "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.test.ts", "**/*.spec.ts"]}],
+    "import/no-extraneous-dependencies": [
+      "error",
+      { "devDependencies": ["**/*.test.ts", "**/*.spec.ts"] }
+    ],
     "camelcase": "off",
     "consistent-return": "off",
     "no-useless-constructor": "off",
     "class-methods-use-this": "off",
+    "no-underscore-dangle": "off",
     "import/extensions": [
       "error",
       "ignorePackages",

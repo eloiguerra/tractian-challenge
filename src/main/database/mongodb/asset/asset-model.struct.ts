@@ -1,3 +1,5 @@
+import { UploadProps } from "@shared/protocols/upload";
+
 export type AssetStatus = "RUNNING" | "ALERTING" | "STOPPED";
 
 export interface AssetModel {
@@ -7,8 +9,8 @@ export interface AssetModel {
   model: string;
   owner: string;
   health: number;
-  images: string[];
   status: AssetStatus;
+  images?: Pick<UploadProps, "destination" | "filename">[];
   createdAt?: Date;
   updatedAt?: Date;
 }
