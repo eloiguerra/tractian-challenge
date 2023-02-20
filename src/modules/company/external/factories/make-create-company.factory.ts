@@ -1,5 +1,5 @@
-import { CreateCompanyController } from "@modules/companie/controllers/create-company.controller";
-import { CreateCompanyUseCase } from "@modules/companie/usecases/create-company.usecase";
+import { CreateCompanyController } from "@modules/company/controllers/create-company.controller";
+import { CreateCompanyUseCase } from "@modules/company/usecases/create-company.usecase";
 import { UserRepository } from "@modules/user/external/repositories/user.repository";
 import { CreateCompanyAssociationUseCase } from "@modules/user/usecases/create-company-association.usecase";
 import { Controller } from "@shared/protocols";

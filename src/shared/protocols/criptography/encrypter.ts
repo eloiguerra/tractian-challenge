@@ -1,3 +1,6 @@
 export interface Encrypter {
-  encrypt: (data: string, expiresIn?: string) => Promise<string>;
+  encrypt: (
+    data: string | Record<string, unknown>,
+    expiresIn?: string,
+  ) => Promise<string>;
 }

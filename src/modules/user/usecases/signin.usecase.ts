@@ -1,6 +1,7 @@
 import { BcryptAdapter } from "@main/adapters/bcrypt-adapter";
 import { JwtAdapter } from "@main/adapters/jwt-adapter";
 import { Result } from "@shared/protocols";
+import { Types } from "mongoose";
 import { UserRepository } from "../external/repositories/user.repository";
 import { UserDoesntExistException } from "./ports/errors/user-doesnt-exist.exception";
 import {
@@ -29,7 +30,11 @@ export class SignInUseCase implements ISignInUseCase {
 
     if (!isValid) return Result.fail(new UserDoesntExistException());
 
-    const token = await this.jwtAdapter.encrypt(user._id);
+    const token = await this.jwtAdapter.encrypt({
+      // id: user._id.toHexString(),
+      id: user._id.toHexString(),
+      companyId: user.company.toHexString(),
+    });
 
     return Result.ok({
       email: user.email,

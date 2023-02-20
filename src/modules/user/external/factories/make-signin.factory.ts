@@ -2,7 +2,7 @@ import { Controller } from "@shared/protocols";
 import { BcryptAdapter } from "@main/adapters/bcrypt-adapter";
 import { salt } from "@main/constants/salt";
 import { SignInUseCase } from "@modules/user/usecases/signin.usecase";
-import { SignInController } from "@modules/user/controllers/signin-controller";
+import { SignInController } from "@modules/user/controllers/signin.controller";
 import { JwtAdapter } from "@main/adapters/jwt-adapter";
 import { Environment } from "@main/config/environment";
 import { UserRepository } from "../repositories/user.repository";

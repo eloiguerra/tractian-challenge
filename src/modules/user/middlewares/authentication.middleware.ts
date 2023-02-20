@@ -17,9 +17,9 @@ export class AuthMiddleware implements Middleware {
 
       const [, token] = authorization.split(" ");
 
-      const { id } = (await this.jwtAdapter.decrypt(token)) as any;
+      const { id, companyId } = (await this.jwtAdapter.decrypt(token)) as any;
 
-      request.user = { id };
+      request.user = { id, companyId };
     } catch (error) {
       return forbidden(new InvalidParamError("token"));
     }
