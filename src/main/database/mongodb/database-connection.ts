@@ -4,10 +4,10 @@ import { Environment } from "../../config/environment";
 
 export default async () => {
   try {
-    const { host, port, user, password } =
+    const { host, user, password, prefix } =
       Environment.infrastructure.database.mongodb;
 
-    const connectionString = `mongodb://${user}:${password}@${host}:${port}`;
+    const connectionString = `${prefix}://${user}:${password}@${host}`;
     console.log(connectionString);
 
     console.log("Connecting to database...");

@@ -14,8 +14,8 @@ export interface IEnvironment {
     };
     database: {
       mongodb: {
+        prefix: string;
         host: string;
-        port: number;
         user: string;
         password: string;
         database: string;
@@ -38,8 +38,8 @@ const Environment: IEnvironment = {
     },
     database: {
       mongodb: {
+        prefix: process.env.DATABASE_PREFIX || "mongodb",
         host: process.env.DATABASE_HOST || "localhost",
-        port: Number(process.env.DATABASE_PORT) || 27017,
         user: process.env.DATABASE_USER || "irineu",
         password: process.env.DATABASE_PASSWORD || "irineu",
         database: process.env.DATABASE_NAME || "tractian",
