@@ -36,7 +36,7 @@
     "build": "tsc && tsc-alias",
     "test": "jest --silent -runInBand",
     "lint": "eslint . --ext .ts --fix",
-    "prepare": "husky install && npx husky add .husky/commit-msg 'npx commitlint --edit $1'"
+    "prepare": "[ \"$NODE_ENV\" = production ] && exit 0; husky install && npx husky add .husky/commit-msg 'npx commitlint --edit $1'"
   },
   "dependencies": {
     "@types/dotenv": "^8.2.0",
