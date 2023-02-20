@@ -36,7 +36,7 @@
   },
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon",
-    "build": "tsc && tsc-alias",
+    "build": "npx tsc && npx tsc-alias",
     "test": "jest --silent -runInBand",
     "lint": "eslint . --ext .ts --fix"
   },
