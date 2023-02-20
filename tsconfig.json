@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es2021",
+    "target": "ES2016",
     "module": "commonjs",
     "lib": ["es6", "DOM"],
     "moduleResolution": "node",
@@ -26,6 +26,11 @@
     "resolveJsonModule": true,
     "sourceMap": true,
     "typeRoots": ["./src/main/types", "./node_modules/@types"]
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
   },
   "include": ["src/**/*", "jest.config.js", "src/shared/views/*.hbs"],
   "exclude": ["node_modules"]
