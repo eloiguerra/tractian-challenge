@@ -10,7 +10,6 @@ export class SignUpController implements Controller {
   ) {}
 
   async handle(request: HttpRequest): Promise<HttpResponse> {
-    console.log("entrei");
     try {
       const { email, name, password } = request.body;
 
