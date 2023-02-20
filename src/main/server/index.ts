@@ -6,6 +6,7 @@ const makeServer = async () => {
 
   app.listen(
     Environment.infrastructure.server.rest.express.port || 5000,
+    "0.0.0.0",
     () => {
       // eslint-disable-next-line no-console
       console.log(
