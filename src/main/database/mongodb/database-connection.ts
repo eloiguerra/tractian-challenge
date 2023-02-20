@@ -8,6 +8,7 @@ export default async () => {
       Environment.infrastructure.database.mongodb;
 
     const connectionString = `mongodb://${user}:${password}@${host}:${port}`;
+    console.log(connectionString);
 
     console.log("Connecting to database...");
     mongoose.set("strictQuery", false);
