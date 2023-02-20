@@ -35,6 +35,7 @@
     "typescript": "*"
   },
   "scripts": {
+    "start": "cross-env NODE_ENV=production node dist/src/main/server/index.js",
     "dev": "cross-env NODE_ENV=development nodemon",
     "build": "npx tsc && npx tsc-alias",
     "test": "jest --silent -runInBand",
